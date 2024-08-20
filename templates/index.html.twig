@@ -1,0 +1,76 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Bienvenue sue EnyPub!{% endblock %}
+
+{% block body %}
+    <main class="container mb-5">
+        <div class="mt-5">
+            <svg style="margin: auto; display: block;" xmlns="http://www.w3.org/2000/svg" width="176" height="40"
+                fill="none" viewBox="0 0 176 40">
+                <path fill="#283841" fill-rule="evenodd"
+                    d="M15 28a5 5 0 0 1-5-5V0H0v23c0 8.284 6.716 15 15 15h11V28H15ZM45 10a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm-19 9C26 8.507 34.507 0 45 0s19 8.507 19 19-8.507 19-19 19-19-8.507-19-19ZM153 10a9 9 0 0 0-9 9 9 9 0 0 0 9 9 9 9 0 0 0 9-9 9 9 0 0 0-9-9Zm-19 9c0-10.493 8.507-19 19-19s19 8.507 19 19-8.507 19-19 19-19-8.507-19-19ZM85 0C74.507 0 66 8.507 66 19s8.507 19 19 19h28c1.969 0 3.868-.3 5.654-.856L124 40l5.768-10.804A19.007 19.007 0 0 0 132 20.261V19c0-10.493-8.507-19-19-19H85Zm37 19a9 9 0 0 0-9-9H85a9 9 0 1 0 0 18h28a9 9 0 0 0 9-8.93V19Z"
+                    clip-rule="evenodd"></path>
+                <path fill="#283841" d="M176 2.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Z"></path>
+            </svg>
+        </div>
+
+        <h1 class="text-center mt-5 fw-light mb-3">
+            Le moteur de recherche des publications scientifiques
+        </h1>
+        <div class="row">
+            <div class="col-md-10 mx-auto">
+                <form action="{{ path('app_search') }}" method="get" class="mb-5">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control form-control-lg" name="q" placeholder="Rechercher" aria-label="Rechercher"
+                            aria-describedby="button-addon2" required>
+                        <button class="btn btn-outline-secondary" type="submit" id="button-addon2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="d-md-flex justify-content-center">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="title">
+                            <label class="form-check-label" for="inlineCheckbox1">Titre de la publication</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="author">
+                            <label class="form-check-label" for="inlineCheckbox2">Auteur de la publication</label>
+                        </div>
+                        <div class="form-check form-switch form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" name="published" value="on">
+                            <label class="form-check-label" for="inlineCheckbox3">Déjà soutenue</label>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="row text-center mt-5">
+                    <div class="col-md-3 mx-auto rounded border shadow-sm p-3 mb-2">
+                        <i class="fa fa-users fs-2"></i>
+                        <h1 class="h1 mt-3 mb-2">456,658</h1>
+                        <p class="fw-light">publications</p>
+                
+                        <a href="#" class="text-decoration-none text-black">EXPLORER <i class="fa fa-arrow-right text-primary"></i></a>
+                    </div>
+                    <div class="col-md-3 mx-auto rounded border shadow-sm p-3 mb-2">
+                        <i class="fa fa-search fs-2"></i>
+                        <h1 class="h1 mt-3 mb-2">1, 056,658</h1>
+                        <p class="fw-light">recherches</p>
+                
+                        <a href="#" class="text-decoration-none text-black">EXPLORER <i class="fa fa-arrow-right text-primary"></i></a>
+                    </div>
+                    <div class="col-md-3 mx-auto rounded border shadow-sm p-3 mb-2">
+                        <i class="fa fa-file-alt fs-2"></i>
+                        <h1 class="h1 mt-3 mb-2">756,658</h1>
+                        <p class="fw-light">Auteurs</p>
+                
+                        <a href="#" class="text-decoration-none text-black">EXPLORER <i class="fa fa-arrow-right text-primary"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
